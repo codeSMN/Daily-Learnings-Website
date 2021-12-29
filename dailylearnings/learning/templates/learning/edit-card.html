@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h5>Settings of Deck-Card #{{card.id}} from <a href="{% url 'learn-deck' card.deck.id %}">{{card.deck.name}}</a>
+    </h5>
+    <hr>
+    <div class="col">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h5>Question</h5>
+            {{form.question}}
+            <hr>
+            <h5>Solution</h5>
+            {{form.solution}}
+            <hr>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

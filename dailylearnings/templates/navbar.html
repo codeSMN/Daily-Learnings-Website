@@ -1,0 +1,103 @@
+{% load static %}
+
+{% if not page == 'learning' %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand logo-image" href="/"><img src="{% static 'images/logo.png' %}" alt="alternative"></a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'home' %}">Home<span
+                            class="sr-only">(current)</span></a>
+                </li>
+                {% if not request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'mobile-features' }">Mobile-Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'web-features' %}">Web-Features</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'learning' %}">Learning</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="{% url 'analytics' %}">Analytics</a>
+                </li>
+                {% endif %}
+                <!-- Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button"
+                       aria-haspopup="true" aria-expanded="false">Description</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="article-details.html"><span
+                                class="item-text">General Goal</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="terms-conditions.html"><span
+                                class="item-text">Web-Version</span></a>
+                        <div class="dropdown-items-divide-hr"></div>
+                        <a class="dropdown-item" href="privacy-policy.html"><span
+                                class="item-text">Mobile-Version</span></a>
+                    </div>
+                </li>
+                <!-- end of dropdown menu -->
+
+            </ul>
+
+            {% if not request.user.is_authenticated %}
+
+            <span class="nav-item">
+                    <a class="btn-outline-sm" href="{% url 'login' %}">Login</a>
+            </span>
+
+            {% else %}
+
+            <span class="nav-item">
+                <a class="btn-outline-sm" href="{% url 'logout' %}">Logout</a>
+            </span>
+
+            {% endif %}
+
+        </div>
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+
+{% else %}
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand logo-image" href="/"><img src="{% static 'images/logo.png' %}" alt="alternative"></a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href= "{% url 'learning' %}">My Decks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href="{% url 'search-deck' %}">Search Deck</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href="{% url 'search-friend' %}">Search Friends</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href= "{% url 'analytics' %}">Analytics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href="{% url 'write-message' %}">Write Message</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll hide" href="{% url 'messages' %}">Messages</a>
+                </li>
+            </ul>
+
+            <span class="nav-item">
+                <a class="btn-outline-sm" href="{% url 'profile' request.user.username %}">My Profile</a>
+            </span>
+
+        </div>
+    </div>
+
+
+</nav>
+
+{% endif %}

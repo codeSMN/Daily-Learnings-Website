@@ -1,0 +1,75 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<header id="header" class="ex-2-header">
+    <div class="row">
+        {% if page == 'login' %}
+        <!-- Login -->
+        <div class="col-lg-12">
+            <h1>Login</h1>
+            <p>You don't have a Password? Then please <a href="{% url 'register' %}">Sign up</a>!</p>
+        </div>
+        <div class="form-container">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    {% for field in form %}
+                    <div class="col-lg-6">
+                        {{field.label_tag}}
+                    </div>
+                    <div class="col-lg-6">
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <input type="submit" class="form-control-submit-button" value="Login">
+                <div class="form-message">
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </form>
+        </div> <!-- end of login -->
+
+        {% elif page == 'register' %}
+
+        <div class="col-lg-12">
+            <h1>Sign Up</h1>
+            <p>You already have an account? Then <a href="{% url 'login' %}">Login</a>!</p>
+        </div>
+        <div class="form-container">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    {% for field in form %}
+                    <div class="col-lg-6">
+                        {{field.label_tag}}
+                    </div>
+                    <div class="col-lg-6">
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                </div>
+                <input type="submit" class="form-control-submit-button" value="Sign up">
+                <div class="form-message">
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </form>
+        </div> <!-- end of register -->
+
+        {% else %}
+
+        <h1>404 ERROR</h1>
+
+        {% endif %}
+    </div>
+</header>
+
+{% endblock content %}

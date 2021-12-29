@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h1>Search</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="search" placeholder="Search for Decks" name="search_input">
+        <input type="submit" value="Search" name="search">
+
+        <br>
+        {% if search_input %}
+        <h5>You searched for {{search_input}}</h5>
+        <br>
+        {% if decks %}
+        <h6>We've found {{decks.count}} matches!</h6>
+        {% csrf_token %}
+        <ul>
+            {% for deck in decks %}
+            <li>
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'select-deck' deck.id %}">{{deck.name}}</a> from <a
+                            href="{% url 'profile' deck.creator.username %}">{{deck.creator.username}}</a> (Subject = {{deck.subject}})
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <h5>Usage: Click on the desired Deck.</h5>
+        {% else %}
+        <h5>Unfortunately, our system could not find any decks with the name '{{search_input}}'.</h5>
+        {% endif %}
+        {% endif %}
+    </form>
+</div>
+
+{% endblock content %}

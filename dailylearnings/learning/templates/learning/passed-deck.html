@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h4>Congratulations! You have completed the learning unit for the Deck <a href="{% url 'learn-deck' deck.id %}">{{deck.name}}</a>!</h4>
+    <input type="submit" value="Change your Limits">
+    <p>To learn more about other topics, click here.</p>
+</div>
+
+{% endblock content %}

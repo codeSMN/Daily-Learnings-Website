@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h5>Create a new Card </h5>
+    <p>Deck: {{deck.name}}</p>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="container">
+            <label>Question: </label>
+            {{form.question}}
+        </div>
+
+        <div class="container">
+            <label>Solution: </label>
+            {{form.solution}}
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</div>
+
+{% endblock content %}

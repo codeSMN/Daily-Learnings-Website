@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h5>Check your Messages</h5>
+    <hr>
+    <h5>Messages received</h5>
+    {% if received_msg %}
+    <ul>
+        {% for message in received_msg %}
+        <li>
+            <a href="{% url 'read-message' message.id %}">{{message.title}}</a> from <a
+                href="{% url 'profile' message.channel.username %}">{{message.channel.username}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <small>Your inbox is currently empty!</small>
+    {% endif%}
+    <hr>
+    <h5>Sent messages</h5>
+    {% if sent_msg %}
+    <ul>
+        {% for message in sent_msg %}
+        <li>
+            <a href="{% url 'read-message' message.id %}">{{message.title}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <small>You haven't sent any messages yet. <a href="{% url 'write-message' %}">Click here</a> to change that</small>
+    {% endif %}
+    <hr>
+
+</div>
+
+{% endblock content %}

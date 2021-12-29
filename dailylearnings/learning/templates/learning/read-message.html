@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    {% if message.type == 'MESSAGE' %}
+    <h5>Message: {{message.title}}</h5>
+    <p>from: <a href="{% url 'profile' message.channel.username %}">{{message.channel}}</a></p>
+    <p>Type: {{message.type}}</p>
+    <p>Date: {{message.send_date|timesince}}</p>
+    <hr>
+    <p>{{message.message}}</p>
+    {% else %}
+    <h5>Friend request from {{message.channel}}</h5>
+    <p>Date: {{message.send_date|timesince}}</p>
+    <hr>
+    {% if request.user == message.recipient %}
+    <h6>Do you want to accept <a href="{% url 'profile' message.recipient %}">{{message.recipient}}'s</a> friend request?</h6>
+    <small>Title: {{message.title}}</small>
+    <br>
+    <small>Message: {{message.message}}</small>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Yes" name="accept-friend-request">
+        <input type="submit" value="No" name="decline-friend-request">
+    </form>
+    {% endif %}
+    {% endif %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p>Do you want to take the message back?</p>
+        <input type="submit" value="Take message back" name="take-message-back">
+    </form>
+</div>
+
+{% endblock content %}

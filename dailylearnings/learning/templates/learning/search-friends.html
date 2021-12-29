@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h4>Search for like-minded people</h4>
+    <p>You can search for users yourself or you can let us search for people who are of interest to you</p>
+    <hr>
+    <input type="search" placeholder="Search by Username">
+    <hr>
+    {% if same_subject or same_school %}
+
+    {% if not same_subject == None %}
+    <h6>Our system was able to find {{same_subject|length}} user(s) with the same favourite Subject: </h6>
+    <ul>
+        {% for user in same_subject %}
+        <li>User: {{user.user.username}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if not same_school == None %}
+
+    <h6>Our system was able to find {{same_school|length}} user(s) who also go to your School:</h6>
+    <ul>
+    {% for user in same_school %}
+    <li>User: <a href="{% url 'profile' user.user.username %}">{{user.user.username}}</a></li>
+    {% endfor %}
+    </ul>
+
+    {% endif %}
+
+    {% else %}
+    <form action="" method="GET">
+        <input type="submit" value="Search by interesting Users" name="search-user">
+    </form>
+    {% endif %}
+</div>
+
+{% endblock content %}

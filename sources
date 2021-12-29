@@ -1,0 +1,18 @@
+pip:
+- install django
+- install mysqlclient
+- install pytz
+- django-bootstrap-v5
+
+Theme: https://www.free-css.com/free-css-templates/page272/tivo
+
+Images:
+    - https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582748_1280.png
+    - https://icons.iconarchive.com/icons/martz90/hex/512/css-3-icon.png
+    - https://www.it-schulungen.com/images/seminar_images/2021-django-logo.png
+    - https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/2560px-Python_logo_and_wordmark.svg.png
+    - https://fedojo.com/wp-content/uploads/2019/03/logo-javascript-png-html-code-allows-to-embed-javascript-logo-in-your-website-587.png
+    - https://upload.wikimedia.org/wikipedia/de/thumb/1/1f/Logo_MySQL.svg/2000px-Logo_MySQL.svg.png
+    - https://pixabay.com/de/vectors/browser-grafik-flach-design-fenster-3614768/
+    - https://pixabay.com/de/illustrations/social-media-sozial-marketing-5187243/
+    - https://pixabay.com/de/illustrations/online-bildung-lernprogramm-3412473/

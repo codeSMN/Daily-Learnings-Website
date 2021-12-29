@@ -1,0 +1,16 @@
+TABLES:
+
+USER:
+-
+
+DECKS:
+- DECK_ID --> Primary Key
+- CREATOR - USER_ID
+- Name of deck
+- SUBJECT
+- DATE of CREATION
+
+DECK-CARDS:
+- CARD_ID --> Primary Key
+- Questions
+- Solution

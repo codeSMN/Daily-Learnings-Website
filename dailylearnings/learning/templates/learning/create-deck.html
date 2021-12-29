@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="first-element">Create a Deck</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <label>Enter a Deck-Name</label>
+        <input required type="text" name="deck_name">
+        <br>
+        <label for="subject">Enter a Subject</label>
+        <input required type="text" value="{{subject.name}}" name="subject" list="subject-list">
+        <datalist id="subject-list">
+            <select id="subject">
+                {% for subject in subjects %}
+                <option value="{{subject.name}}">{{subject.name}}</option>
+                {% endfor %}
+            </select>
+        </datalist>
+        <br>
+        <label>Accessible to every User: </label>
+        <input type="checkbox" name="public">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+{% endblock content %}

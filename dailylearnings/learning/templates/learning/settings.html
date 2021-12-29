@@ -1,0 +1,89 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <div class="row">
+        <div class="col">
+            <h4>Settings of Deck <a href="{% url 'learn-deck' deck.id %}">{{deck.name}}</a></h4>
+            <hr>
+            {% if deck.creator == request.user %}
+            <div class="container">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <h6>General Deck-Settings</h6>
+                    <div class="row">
+                        <label>Deck-Name: </label>
+                        <input type="text" placeholder="Name of Deck" name="deck-name" value="{{deck.name}}">
+                    </div>
+                    <div class="row">
+                        <label>Accessible for everyone: </label>
+                        <input type="checkbox" name="deck-public" {% if deck.public %}checked{% endif %}>
+                    </div>
+                    <div class="row">
+                        <label>Subject: </label>
+                        <input required type="text" value="{{deck.subject.name}}" name="deck-subject" list="subject-list">
+                        <datalist id="subject-list">
+                            <select id="subject">
+                                {% for subject in subjects %}
+                                <option value="{{subject.name}}">{{subject.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </datalist>
+                    </div>
+                    <input type="submit" value="Update Deck" name="save-deck-settings">
+                </form>
+            </div>
+            <hr>
+            <div class="container">
+                <h5>My Cards</h5>
+                <div class="row">
+                    <div class="col">
+                        <h6>Question</h6>
+                    </div>
+                    <div class="col">
+                        <h6>Solution</h6>
+                    </div>
+                    <div class="col">
+                        <br>
+                    </div>
+                </div>
+                <hr>
+                {% for card in cards %}
+                <div class="row">
+                    <div class="col">
+                        <p>{{card.question}}</p>
+                    </div>
+                    <div class="col">
+                        <p>{{card.solution}}</p>
+                    </div>
+                    <div class="col">
+                        <a href="{% url 'edit-card' card.id %}">Edit</a>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <input type="submit" value="Delete #{{card.id}}" name="delete-card">
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="row">
+                    <h6>Add more Cards? <a href="{% url 'add-card' deck.id %}">Click here</a></h6>
+                </div>
+            </div>
+            <hr>
+            {% endif %}
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% if deck.creator == request.user %}
+                <h6>Delete Deck</h6>
+                <input type="submit" value="Delete Deck" name="delete-deck">
+                {% else %}
+                <h6>Unfollow the Deck {{deck.name}}</h6>
+                <input type="submit" value="Unfollow" name="unfollow-deck">
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

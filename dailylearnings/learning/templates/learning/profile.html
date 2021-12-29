@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <h5>Profile of {{user.username}}</h5>
+    <form action="" method="GET">
+        {% csrf_token %}
+        {% if not edit_mode %}
+        <input type="submit" value="Edit Profile" name="edit-profile">
+        {% endif %}
+    </form>
+    <hr>
+    {% if not edit_mode %}
+    <p>Name: {{user.first_name}} {{user.last_name}}</p>
+    <p>Biography: {{profile.bio}}</p>
+    <p>School: <a href="https://www.google.com/search?q={{profile.school}}">{{profile.school}}</a></p>
+    <p>Favourite Subject: {{profile.fav_subject}}</p>
+    <p>Last seen: {{user.last_login|timesince}}</p>
+    {% else %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{user_form.as_p}}
+        {{profile_form.as_p}}
+        <input type="submit" name="submit=changes" value="Submit changes">
+    </form>
+    {% endif %}
+    {% if request.user == user %}
+    <hr>
+    <h5>Your Friends</h5>
+    <ul>
+        {% for friend in friends %}
+        {% if friend.user_a == user %}
+        <li>{{friend.user_b}}</li>
+        {% else %}
+        <li>{{friend.user_a}}</li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if request.user.is_staff %}
+    <hr>
+    <h5>Staff-Information</h5>
+    <p>Email address: {{user.email}}</p>
+    <p>Date joined: {{user.date_joined|timesince}}</p>
+    <p></p>
+    {% endif %}
+    <hr>
+    <p>{{user.username}}'s Decks:</p>
+    <ul>
+        {% for deck in decks %}
+        <li>
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'select-deck' deck.id %}">{{deck.name}}</a> in Subject {{deck.subject}}
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock content %}

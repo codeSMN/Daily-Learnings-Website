@@ -1,0 +1,73 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container first-element">
+        <div class="row">
+            <div class="col">
+                <h5>{{deck.name}}</h5>
+            </div>
+            <div class="col">
+                <form action="" method="GET">
+                    {% if request.user == deck.creator %}
+                    <input type="submit" value="Edit" name="edit-card">
+                    {% endif %}
+                    <input type="submit" value="Skip" name="skip-card">
+                </form>
+            </div>
+            <div class="col">
+                <small>{{status.again}}</small>
+                <small>{{status.okay}}</small>
+                <small>{{status.easy}}</small>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <h3>{{card.question}}</h3>
+        </div>
+        {% if show_answer %}
+        <div class="row">
+            <h5>{{card.solution}}</h5>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            {% if show_answer %}
+            <div class="col col-lg-2">
+                <form action="" method="GET">
+                    {% csrf_token %}
+                    <p><{{times.again}}</p>
+                    <input type="submit" value="Again" name="again">
+                </form>
+            </div>
+            <div class="col col-lg-2">
+                <form action="" method="GET">
+                    {% csrf_token %}
+                    <p><{{times.okay}}</p>
+                    <input type="submit" value="Okay" name="okay">
+                </form>
+            </div>
+            <div class="col col-lg-2">
+                <form action="" method="GET">
+                    {% csrf_token %}
+                    <p><{{times.easy}}</p>
+                    <input type="submit" value="Easy" name="easy">
+                </form>
+            </div>
+            {% else %}
+            <form action="" method="GET">
+                {% csrf_token %}
+                <input type="submit" value="Show Answer" name="show">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

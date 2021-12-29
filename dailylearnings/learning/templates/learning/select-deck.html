@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container first-element">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h5>Deck: {{deck.name}}</h5>
+        <h5>Creator: {{deck.creator.username}}</h5>
+        <h5>Subject: {{deck.subject.name}}</h5>
+        <h5>Created: {{deck.created|timesince}}</h5>
+        <h5>Last change: ///</h5>
+
+        <input type="submit" value="Select Deck">
+    </form>
+</div>
+
+{% endblock %}

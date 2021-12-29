@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="first-element">My Decks</h1>
+
+    <h4>Own Decks</h4>
+    <hr>
+    {% if my_decks %}
+    <div class="container">
+
+    </div>
+
+    <div class="container">
+        {% for deck in my_decks %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'learn-deck' deck.id %}">{{deck.name}}</a>
+            </div>
+            <div class="col-md-auto">
+                <a href="{% url 'settings' deck.id %}">Settings</a>
+                <a href="{% url 'add-card' deck.id %}">+</a>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>You haven't created your own Deck yet!</p>
+    <hr>
+    {% endif %}
+    <h4>Other Decks</h4>
+    <hr>
+    {% if used_decks %}
+    <div class="container">
+        {% for deck in used_decks %}
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'learn-deck' deck.id %}">{{deck.name}}</a>
+            </div>
+            <div class="col-md-auto">
+                <p>Learned Cards</p>
+            </div>
+            <div class="col col-lg-2">
+                <a href="{% url 'settings' deck.id %}">Settings</a>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <p>You aren't yet using any other users decks!</p>
+
+    {% endif %}
+
+    <form action="{% url 'create-deck' %}">
+        <input type="submit" value="Create Deck">
+    </form>
+</div>
+
+{% endblock content %}

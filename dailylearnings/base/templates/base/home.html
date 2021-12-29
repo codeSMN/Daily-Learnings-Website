@@ -1,0 +1,450 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="header-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-xl-5">
+                    <div class="text-container">
+                        <h1>Daily Learnings</h1>
+                        <p class="p-large">Use Daily Learnings for the best, most productive learnings process with
+                            index cards.</p>
+                        <a class="btn-solid-lg page-scroll" href="{% url 'register' %}">Sign up</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6 col-xl-7">
+                    <div class="image-container">
+                        <div class="img-wrapper">
+                            <img class="img-fluid" src="{% static 'images/theme_images/header-software-app.png' %}"
+                                 alt="alternative">
+                        </div> <!-- end of img-wrapper -->
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of header-content -->
+</header> <!-- end of header -->
+<svg class="header-frame" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+     viewBox="0 0 1920 310">
+    <defs>
+        <style>.cls-1{fill:#009EFF;}</style>
+    </defs>
+    <title>header-frame</title>
+    <path class="cls-1"
+          d="M0,283.054c22.75,12.98,53.1,15.2,70.635,14.808,92.115-2.077,238.3-79.9,354.895-79.938,59.97-.019,106.17,18.059,141.58,34,47.778,21.511,47.778,21.511,90,38.938,28.418,11.731,85.344,26.169,152.992,17.971,68.127-8.255,115.933-34.963,166.492-67.393,37.467-24.032,148.6-112.008,171.753-127.963,27.951-19.26,87.771-81.155,180.71-89.341,72.016-6.343,105.479,12.388,157.434,35.467,69.73,30.976,168.93,92.28,256.514,89.405,100.992-3.315,140.276-41.7,177-64.9V0.24H0V283.054Z"/>
+</svg>
+<!-- end of header -->
+
+<!-- Customers -->
+<div class="slider-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Image Slider -->
+                <div class="slider-container">
+                    <div class="swiper-container image-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/django_logo.png' %}"
+                                     alt="alternative">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/python_logo.png' %}"
+                                     alt="alternative">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/mysql_logo.svg.png' %}"
+                                     alt="alternative">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/html_logo.png' %}"
+                                     alt="alternative">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/css_logo.png' %}"
+                                     alt="alternative">
+                            </div>
+                            <div class="swiper-slide">
+                                <img class="img-fluid" src="{% static 'images/technology_icons/javascript_logo.png' %}"
+                                     alt="alternative">
+                            </div>
+                        </div> <!-- end of swiper-wrapper -->
+                    </div> <!-- end of swiper container -->
+                </div> <!-- end of slider-container -->
+                <!-- end of image slider -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of slider-1 -->
+<!-- end of customers -->
+
+<!-- Description -->
+<div class="cards-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">Our system brings organization into your learning trouble</h2>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{% static 'images/organisation.png' %}" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Organisation</h4>
+                        <p>Does your teacher always say things like - organisation is the be-all and end-all? That's
+                            right! Daily Learnings helps you to have a productive and organized learning experience
+                            every day.</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{% static 'images/social_networking.png' %}" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Social Networking</h4>
+                        <p>Not sure how to solve the math problem? Do you need an elaborate learning deck about ancient
+                            history? Search in our forum and find like-minded people and exchange ideas! [not realized
+                            at the moment!]</p>
+                    </div>
+                </div>
+                <!-- end of card -->
+
+                <!-- Card -->
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{% static 'images/analytics.png' %}" alt="alternative">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Analytics</h4>
+                        <p>Unsure whether you are sufficiently well prepared for the next exam? Daily Learnings answers
+                            this question for you.</p>
+                    </div>
+                </div> <!-- end of card -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of cards-1 -->
+<!-- end of description -->
+
+<!-- Features -->
+<div id="features" class="tabs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="above-heading">Features</div>
+                <h2 class="h2-heading">Daily Learning Mobile</h2>
+                <p class="p-heading">In order to use the full scope of Daily Learnings, download immediately the app
+                    completely free in the App Store.</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+
+                <!-- Tabs Links -->
+                <ul class="nav nav-tabs" id="argoTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab"
+                           aria-controls="tab-1" aria-selected="true"><i class="fas fa-list"></i>Interface</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab"
+                           aria-controls="tab-2" aria-selected="false"><i class="fas fa-envelope-open-text"></i>Timetable</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab"
+                           aria-controls="tab-3" aria-selected="false"><i class="fas fa-chart-bar"></i>Analytics</a>
+                    </li>
+                </ul>
+                <!-- end of tabs links -->
+
+                <!-- Tabs Content -->
+                <div class="tab-content" id="argoTabsContent">
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="video-container">
+                                    <video class="video" src="{% static 'images/gifs/interface_edit.mp4'%}" autoplay
+                                           muted loop id="interfaceVideo"></video>
+                                </div> <!-- end of video-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>Modern design meets year-old teaching content</h3>
+                                    <p>You do not combine the Pythagoras theorem with a modern app? We do!</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">SwiftUI is used as the basis for Daily Learnings
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">A modern appearance and beautiful animation helps
+                                                you to motivate yourself to learn every day
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-solid-reg popup-with-move-anim"
+                                       href="#details-lightbox-1">More information</a>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container">
+                                    <img class="img-fluid" src="{% static 'images/timetable_showcase.png' %}"
+                                         alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>Create your own Timetable</h3>
+                                    <p>You can enter your personal timetable directly in the app. So you always have
+                                        your timetable with you, and you can see exactly when you have lessons with
+                                        which teacher.</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Registered in a few minutes</div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Nice simple overview</div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">More
+                                        information</a>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                    <!-- Tab -->
+                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="image-container">
+                                    <img class="img-fluid" src="{% static 'images/analytics_showcase.png' %}"
+                                         alt="alternative">
+                                </div> <!-- end of image-container -->
+                            </div> <!-- end of col -->
+                            <div class="col-lg-6">
+                                <div class="text-container">
+                                    <h3>Analyze your learning behavior</h3>
+                                    <p>Afraid that you have learned enough for the next biology performance assessment?
+                                        No problem - Daily Learnings gives you the answer.</p>
+                                    <ul class="list-unstyled li-space-lg">
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Clear presentation of your learning behavior</div>
+                                        </li>
+                                        <li class="media">
+                                            <i class="fas fa-square"></i>
+                                            <div class="media-body">Approaches to how you can use your study time more
+                                                productively
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <a class="btn-solid-reg popup-with-move-anim"
+                                       href="#details-lightbox-3">More information</a>
+                                </div> <!-- end of text-container -->
+                            </div> <!-- end of col -->
+                        </div> <!-- end of row -->
+                    </div> <!-- end of tab-pane -->
+                    <!-- end of tab -->
+
+                </div> <!-- end of tab content -->
+                <!-- end of tabs content -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of tabs -->
+<!-- end of features -->
+
+<!-- Details Lightboxes -->
+
+<!-- Details Lightbox 1 -->
+<div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="container">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <div class="video-container">
+                    <video class="video" src="{% static 'images/gifs/interface_edit.mp4'%}" autoplay muted loop></video>
+                </div> <!-- end of video-container -->
+            </div> <!-- end of col interfaceLbVideo -->
+            <div class="col-lg-4">
+                <h3>Interface</h3>
+                <hr>
+                <p>You do not combine the Pythagoras theorem with a modern app? We do!</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">SwiftUI is used as the basis for Daily Learnings</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">A modern appearance and beautiful animation helps
+                            you to motivate yourself to learn every day
+                        </div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Easy user administration</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Using of fast Google cloud severs</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Your data will not be sold to third parties</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close" href="{% url 'register' %}">Sign up</a> <a
+                    class="btn-outline-reg mfp-close as-button" href="#screenshots">Back</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of details lightbox 1 -->
+
+<!-- Details Lightbox 2 -->
+<div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="container">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'images/timetable_showcase.png' %}"
+                         alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Create your own Timetable</h3>
+                <hr>
+                <p>You can enter your personal timetable directly in the app. So you always have
+                    your timetable with you, and you can see exactly when you have lessons with
+                    which teacher.</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Registered in a few minutes</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Nice simple overview</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Saving individual data about teacher, lesson times, subjects...</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Get notifications when school day start</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close" href="{% url 'register' %}">Sign up</a> <a
+                    class="btn-outline-reg mfp-close as-button" href="#screenshots">Back</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of details lightbox 2 -->
+
+<!-- Details Lightbox 3 -->
+<div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
+    <div class="container">
+        <div class="row">
+            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+            <div class="col-lg-8">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'images/analytics_showcase.png' %}"
+                         alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Analyze your learning behavior</h3>
+                <hr>
+                <p>Afraid that you have learned enough for the next biology performance assessment?
+                    No problem - Daily Learnings gives you the answer.</p>
+                <ul class="list-unstyled li-space-lg">
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Clear presentation of your learning behavior</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Approaches to how you can use your study time more productively</div>
+                    </li>
+                    <li class="media">
+                        <i class="fas fa-square"></i>
+                        <div class="media-body">Get notifications, if our system see based on our data low learning rates</div>
+                    </li>
+                </ul>
+                <a class="btn-solid-reg mfp-close" href="{% url 'register' %}">Sign up</a> <a
+                    class="btn-outline-reg mfp-close as-button" href="#screenshots">Back</a>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of lightbox-basic -->
+<!-- end of details lightbox 3 -->
+
+<!-- end of details lightboxes -->
+
+<!-- Web-Features -->
+<div id="details" class="basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h2>Features of our Web-Version</h2>
+                    <p>Our web version can currently offer you the main feature of our service - learning with index cards.</p>
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">There are no requirements to use the web-version - just register, and you can start learning</div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body">Recommended browsers: Google Chrome, Mozilla Firefox, Opera or Safari</div>
+                        </li>
+                    </ul>
+                    <a class="btn-solid-reg page-scroll" href="{% url 'register' %}">Sign up</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-6">
+                <div class="image-container">
+                    <img class="img-fluid" src="{% static 'images/theme_images/details.png' %}" alt="alternative">
+                </div> <!-- end of image-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of web-features -->
+
+{% endblock content %}
